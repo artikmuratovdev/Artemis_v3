@@ -1,35 +1,49 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import './App.css'
+import { Grid, GridItem, Show, Text } from '@chakra-ui/react';
+import Header from './Components/Header';
+import { useState } from 'react';
+import Sidebar from './Components/Sidebar';
 
-function App() {
-  const [count, setCount] = useState(0)
+const App = () => {
+  const [isOpen , setIsOpen] = useState(true);
+  let column 
+  if(isOpen){
+    column = { lg: '250px 1fr', base: '1fr' }
+  }
+  else{
+    column = { lg: '50px 1fr', base: '1fr' }
+  }
 
+  const transitionAside = () => {
+    setIsOpen(!isOpen);
+  }
   return (
-    <>
-      <div>
-        <a href="https://vite.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
-      </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.tsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
-    </>
-  )
-}
+    <Grid
+      templateAreas={{
+        lg: `"logo header" "aside main"`,
+        base: `"logo" "header" "main"`,
+      }}
+      gridTemplateColumns={column}
+      gridTemplateRows={{ lg: '50px 1fr', base: '50px 50px 1fr' }}
+      transition="all 0.3s"
+    >
+       <GridItem bg='blue.400' area={'logo'}> {/* logo */}
+        <Text cursor={'pointer'} fontSize={'2xl'} bg={'blue.400'} textAlign={'center'} h={'50px'} p={1.5} fontWeight={'500'}>
+          {isOpen ? "Artemis Project" : "A"}
+        </Text>
+      </GridItem>
+      <GridItem bg='blue.500' area={'header'}> {/* header */}
+        <Header toggler={transitionAside}/>
+      </GridItem>
+      <Show above='lg'>
+        <GridItem area={'aside'}> {/* aside */}
+          <Sidebar isOpen={isOpen} />
+        </GridItem>
+      </Show>
+      <GridItem bg='' area={'main'}> {/* main */}
+        Main
+      </GridItem>
+    </Grid>
+  );
+};
 
-export default App
+export default App;
