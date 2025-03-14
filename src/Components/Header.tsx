@@ -40,8 +40,8 @@ const Header = ({ toggler }: Props) => {
         onClick={toggler}
         fontSize={'xl'}
         fontWeight={'bold'}
-         cursor={'pointer'}
-         color={'white'}
+        cursor={'pointer'}
+        color={'white'}
       />
       <HStack  spacing={5}>
         <Select

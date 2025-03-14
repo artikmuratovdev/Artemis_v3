@@ -18,7 +18,7 @@ import {
   Stack,
 } from '@chakra-ui/react';
 import { FaBook, FaRegCircle } from 'react-icons/fa6';
-import { panel } from '../controllers/panel';
+import { panel } from './controllers/panel';
 import { ElementType } from 'react';
 
 interface Panel {
@@ -77,7 +77,7 @@ const Sidebar = ({ isOpen }: Props) => {
       ) : (
         <Stack my={2}>
           {panels.map((item, idx) => (
-            <Menu  key={idx}>
+            <Menu key={idx}>
               <MenuButton
                 as={IconButton}
                 aria-label='Options'
