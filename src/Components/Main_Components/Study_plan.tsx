@@ -30,6 +30,7 @@ interface Data {
   body: { key: string; value: string }[];
 }
 
+
 const Study_plan = () => {
   const { isOpen, onOpen, onClose } = useDisclosure();
   const [modalData, setModalData] = useState<Data[]>([]);
@@ -42,10 +43,10 @@ const Study_plan = () => {
       {
         head: { key: "Mashg'ulot", value: 'Yuklama' },
         body: [
-          { key: "Ma'ruza", value: `${data.maruza}` },
-          { key: 'Amaliy', value: `${data.amaliy}` },
-          { key: "Mustaqil ta'lim", value: `${data.mustaqil}` },
-          { key: 'Jami', value: `${data.jami}` },
+          { key: "Ma'ruza", value: `${data.maruza} soat` },
+          { key: 'Amaliy', value: `${data.amaliy} soat` },
+          { key: "Mustaqil ta'lim", value: `${data.mustaqil} soat` },
+          { key: 'Jami', value: `${data.jami} soat` },
         ],
       },
       {
@@ -59,13 +60,12 @@ const Study_plan = () => {
       },
     ]);
   };
-  console.log(modalData);
 
   return (
     <>
-      <Accordion defaultIndex={[0]} allowMultiple>
+      <Accordion defaultIndex={[3]} allowMultiple>
         {study_table.map((item, idx) => (
-          <AccordionItem key={idx} borderTop={'3px solid forestgreen'}>
+          <AccordionItem mt={5} key={idx} borderTop={'3px solid forestgreen'}>
             {({ isExpanded = true }) => (
               <>
                 <h2>
@@ -135,26 +135,36 @@ const Study_plan = () => {
         <ModalContent>
           <ModalHeader>{science}</ModalHeader>
           <ModalCloseButton />
-          <ModalBody gap={'5'}>
+          <ModalBody>
             {modalData.map((item, idx) => (
-              <Table key={idx} size='sm' variant='striped' colorScheme='gray'>
-                <Thead>
-                  <Tr>
-                    <Th fontSize={16}>{item.head.key}</Th>
-                    <Th fontSize={16}>{item.head.value}</Th>
-                  </Tr>
-                </Thead>
-                <Tbody>
-                  {item.body.map((i, index) => (
-                    <Tr key={index}>
-                      <Td py={'3'} fontSize={17}>
-                        {i.key}
-                      </Td>
-                      <Td fontSize={17}>{i.value}</Td>
+              <TableContainer>
+                <Table
+                  mb={5}
+                  key={idx}
+                  size='sm'
+                  variant='striped'
+                  colorScheme='gray'
+                >
+                  <Thead>
+                    <Tr>
+                      <Th fontSize={16}>{item.head.key}</Th>
+                      <Th fontSize={16}>{item.head.value}</Th>
                     </Tr>
-                  ))}
-                </Tbody>
-              </Table>
+                  </Thead>
+                  <Tbody>
+                    {item.body.map((i, index) =>
+                      i.value !== '0 soat' ? (
+                        <Tr key={index}>
+                          <Td fontSize={17}>
+                            {i.key}
+                          </Td>
+                          <Td fontSize={17}>{i.value}</Td>
+                        </Tr>
+                      ) : null
+                    )}
+                  </Tbody>
+                </Table>
+              </TableContainer>
             ))}
           </ModalBody>
         </ModalContent>
