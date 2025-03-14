@@ -2,6 +2,7 @@ import { Grid, GridItem, Show, Text } from '@chakra-ui/react';
 import Header from './Components/Header';
 import { useState } from 'react';
 import Sidebar from './Components/Sidebar';
+import Main from './Components/Main';
 
 const App = () => {
   const [isOpen , setIsOpen] = useState(true);
@@ -41,7 +42,7 @@ const App = () => {
         </GridItem>
       </Show>
       <GridItem bg='' area={'main'}> {/* main */}
-        Main
+        <Main />
       </GridItem>
     </Grid>
   );

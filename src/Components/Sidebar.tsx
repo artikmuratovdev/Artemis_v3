@@ -43,7 +43,7 @@ const Sidebar = ({ isOpen }: Props) => {
           {panels.map((item, idx) => (
             <AccordionItem color={'white'} border={'none'} key={idx}>
               <h2>
-                <AccordionButton  bg='#222d32'>
+                <AccordionButton bg='#222d32'>
                   <Icon as={item.icons} />
                   <Box as='span' flex='1' ml={2} textAlign='left'>
                     {item.name}
@@ -65,7 +65,7 @@ const Sidebar = ({ isOpen }: Props) => {
           ))}
           <AccordionItem color={'white'} border={'none'}>
             <h2>
-              <AccordionButton  bg='#222d32'>
+              <AccordionButton bg='#222d32'>
                 <Icon as={FaBook} />
                 <Link href='#' as='span' flex='1' ml={2} textAlign='left'>
                   Elektron kutubxona
@@ -77,10 +77,11 @@ const Sidebar = ({ isOpen }: Props) => {
       ) : (
         <Stack my={2}>
           {panels.map((item, idx) => (
-            <Menu key={idx}>
+            <Menu  key={idx}>
               <MenuButton
                 as={IconButton}
                 aria-label='Options'
+                color={'gray.500'}
                 icon={<item.icons />}
                 variant='outline'
               />
@@ -100,6 +101,8 @@ const Sidebar = ({ isOpen }: Props) => {
               aria-label='Options'
               icon={<FaBook />}
               variant='outline'
+              color={'gray.500'}
+              bg={'#222d32'}
             ></Link>
           </Menu>
         </Stack>

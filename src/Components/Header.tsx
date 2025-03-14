@@ -34,7 +34,6 @@ const Header = ({ toggler }: Props) => {
       justifyContent={'space-between'}
       px={3}
       h={'50px'}
-      color={'white'}
     >
       <Icon
         as={GiHamburgerMenu}
@@ -42,6 +41,7 @@ const Header = ({ toggler }: Props) => {
         fontSize={'xl'}
         fontWeight={'bold'}
          cursor={'pointer'}
+         color={'white'}
       />
       <HStack  spacing={5}>
         <Select
@@ -57,11 +57,11 @@ const Header = ({ toggler }: Props) => {
           ))}
         </Select>
         <Show above='md'>
-          <GoBellFill  fontSize={23} />
+          <GoBellFill color={'white'} fontSize={23} />
         </Show>
         <Menu closeOnSelect={false}>
           <MenuButton>
-            <Flex alignItems={'center'}>
+            <Flex color={'white'}  alignItems={'center'}>
               <Show above='md'>
                 <Avatar size={'sm'} src={'src/img/Sharingan.jpg'} />
               </Show>
