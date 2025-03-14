@@ -8,7 +8,7 @@ const App = () => {
   const [isOpen , setIsOpen] = useState(true);
   let column 
   if(isOpen){
-    column = { lg: '250px 1fr', base: '1fr' }
+    column = { lg: '230px 1fr', base: '1fr' }
   }
   else{
     column = { lg: '50px 1fr', base: '1fr' }
@@ -29,7 +29,7 @@ const App = () => {
       color={'whiteAlpha'}
     >
        <GridItem bg='blue.400' area={'logo'}> {/* logo */}
-        <Text color={'white'} cursor={'pointer'} fontSize={'2xl'} bg={'blue.400'} textAlign={'center'} h={'50px'} p={1.5} fontWeight={'500'}>
+        <Text color={'white'} cursor={'pointer'} fontSize={'xl'} bg={'blue.400'} textAlign={'center'} h={'50px'} p={1.5} fontWeight={'500'}>
           {isOpen ? "Artemis Project" : "A"}
         </Text>
       </GridItem>

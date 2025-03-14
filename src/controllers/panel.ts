@@ -45,3 +45,35 @@ export const panel = [
     { item_name: "Kirish tarixi" , target:"#"},
   ] },
 ];
+
+export const accordions = [
+  { name: "Fanlar va resurslar", items: [
+    { item_name: "O'quv reja" , target:"#" , img:"src/img/book.png"},
+    { item_name: "Dars jadvali" , target:"#" , img:"src/img/calendar.png"},
+    { item_name: "Nazorat jadvali" , target:"#" , img:"src/img/Achievement.png"},
+    { item_name: "Fan tanlovi" , target:"#" , img:"src/img/Target.png"},
+    { item_name: "Fan resurslari" , target:"#" , img:"src/img/PC.png"},
+    { item_name: "Unilibrary" , target:"#" , img:"src/img/PC.png"},
+  ]},
+  {name: "O'quv faoliyati", items: [
+    { item_name: "Davomat" , target:"#" , img:"src/img/clock.png"},
+    { item_name: "O'zlashtirish" , target:"#" , img:"src/img/Calc.png"},
+    { item_name: "Reyting daftarcha" , target:"#" , img:"src/img/book.png"},
+    { item_name: "Imtihonlar" , target:"#" , img:"src/img/question.png"},
+    { item_name: "Bitiruv ishi" , target:"#" , img:"src/img/book.png"},
+  ] },
+  { name: "Qayta o'qish", items: [
+    { item_name: "Ariza qayta o'qish" , target:"#" , img:"src/img/book.png"},
+    { item_name: "Q.O'qish mashg'ulotlari" , target:"#" , img:"src/img/calendar.png"},
+    { item_name: "Q.O'qish nazorat jadvali" , target:"#" , img:"src/img/Achievement.png"},
+    { item_name: "Q.O'qish o'zlashtirish" , target:"#" , img:"src/img/Calc.png"},
+  ] },
+  { name: "Hujjatlar ro'yhati", items: [
+    { item_name: "Buyruqlar" , target:"#" , img:"src/img/Note.png"},
+    { item_name: "Shartnomalar" , target:"#" , img:"src/img/list.png"},
+    { item_name: "Ma'lumotnomalar" , target:"#" , img:"src/img/list.png"},
+    { item_name: "Bitiruv varaqa" , target:"#" , img:"src/img/book.png"},
+    { item_name: "Talaba hujjati" , target:"#" , img:"src/img/list.png"},
+    { item_name: "Talaba hujjati" , target:"#" , img:"src/img/message.png"},
+  ] },
+]

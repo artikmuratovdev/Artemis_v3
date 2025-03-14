@@ -18,7 +18,7 @@ import {
   Stack,
 } from '@chakra-ui/react';
 import { FaBook, FaRegCircle } from 'react-icons/fa6';
-import { panel } from './panel';
+import { panel } from '../controllers/panel';
 import { ElementType } from 'react';
 
 interface Panel {
