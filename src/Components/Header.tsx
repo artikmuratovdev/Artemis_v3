@@ -10,10 +10,10 @@ import {
   MenuDivider,
   MenuItemOption,
   MenuList,
-  MenuOptionGroup,
   Select,
   Show,
   Text,
+  useColorMode,
 } from '@chakra-ui/react';
 import { useState } from 'react';
 import { GoBellFill  } from 'react-icons/go';
@@ -23,9 +23,10 @@ interface Props {
 }
 
 const Header = ({ toggler }: Props) => {
+  const { colorMode, toggleColorMode } = useColorMode()
   const langs = ["O'zbekcha", 'English', 'Русский'];
   const [lang, setLang] = useState('');
-  console.log(lang);
+  console.log(colorMode , lang);
 
   return (
     <HStack
@@ -33,6 +34,7 @@ const Header = ({ toggler }: Props) => {
       justifyContent={'space-between'}
       px={3}
       h={'50px'}
+      color={'white'}
     >
       <Icon
         as={GiHamburgerMenu}
@@ -69,18 +71,17 @@ const Header = ({ toggler }: Props) => {
               </Box>
             </Flex>
           </MenuButton>
-          <MenuList minWidth='240px'>
-            <MenuOptionGroup defaultValue='light' title='Theme' type='radio'>
-              <MenuItemOption value='light'>Light</MenuItemOption>
-              <MenuItemOption value='dark'>Dark</MenuItemOption>
-            </MenuOptionGroup>
+          <MenuList color={colorMode === 'dark'? "white" :'#0f1319'} minWidth='240px'>
+            <Box as='div'>
+              <MenuItemOption onClick={toggleColorMode}  value='light'>{colorMode}</MenuItemOption>
+            </Box>
             <MenuDivider />
-            <MenuOptionGroup type='checkbox'>
+            <Box>
               <MenuItemOption value='profil'>Profil</MenuItemOption>
               <MenuItemOption value='person_data'>
                 Shaxsiy ma'lumotlar
               </MenuItemOption>
-            </MenuOptionGroup>
+            </Box>
           </MenuList>
         </Menu>
       </HStack>
