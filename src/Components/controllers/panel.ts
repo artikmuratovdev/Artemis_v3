@@ -6,7 +6,7 @@ export const panel = [
     icons: FaBook,
     items: [
       { item_name: "O'quv reja", target: '/education/curriculum' },
-      { item_name: 'Dars jadvali', target: '#' },
+      { item_name: 'Dars jadvali', target: '/education/time-table'},
       { item_name: 'Nazorat jadvali', target: '#' },
       { item_name: 'Fan resurslari', target: '#' },
       { item_name: 'Davomat', target: '#' },
@@ -79,7 +79,7 @@ export const accordions = [
         target: '/education/curriculum',
         img: 'src/img/book.png',
       },
-      { item_name: 'Dars jadvali', target: '#', img: 'src/img/calendar.png' },
+      { item_name: 'Dars jadvali', target: '/education/time-table', img: 'src/img/calendar.png' },
       {
         item_name: 'Nazorat jadvali',
         target: '#',

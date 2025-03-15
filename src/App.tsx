@@ -19,9 +19,10 @@ const App = () => {
   };
   return (
     <Grid
+      position={'relative'}
       templateAreas={{
         lg: `"logo header" "aside main"`,
-        base: `"logo" "header" "main"`,
+        base: `"logo" "header" "aside" "main"`,
       }}
       gridTemplateColumns={column}
       gridTemplateRows={{ lg: '50px 1fr', base: '50px 50px 1fr' }}
@@ -53,14 +54,14 @@ const App = () => {
         {/* header */}
         <Header toggler={transitionAside} />
       </GridItem>
-      <Show above='lg'>
+      <Show above='md'>
         <GridItem h={`calc(100vh - 50px)`} bg={'#222d32'} area={'aside'}>
           {' '}
           {/* aside */}
           <Sidebar isOpen={isOpen} />
         </GridItem>
       </Show>
-      <GridItem h={`calc(100vh - 50px)`} overflow={'auto'} bg='' area={'main'}>
+      <GridItem h={`calc(100vh - 50px)`} overflow={'auto'} area={'main'}>
         {' '}
         {/* main */}
         <Main />

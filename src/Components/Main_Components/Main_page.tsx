@@ -5,7 +5,7 @@ import {
   AccordionItem,
   AccordionPanel,
   Box,
-  HStack,
+  Grid,
   Image,
 } from '@chakra-ui/react';
 import { Link } from 'react-router';
@@ -30,7 +30,14 @@ const Main_page = () => {
               </AccordionButton>
             </h2>
             <AccordionPanel pb={4}>
-              <HStack spacing={6}>
+              <Grid
+                templateColumns={{
+                  base: 'repeat(2, 1fr)',
+                  sm: 'repeat(3, 1fr)',
+                  md: 'repeat(6, 1fr)',
+                }}
+                gap={6}
+              >
                 {item.items.map((itm, index) => (
                   <Link key={index} to={itm.target}>
                     <Box
@@ -38,14 +45,13 @@ const Main_page = () => {
                       flexDirection={'column'}
                       alignItems={'center'}
                       textAlign={'center'}
-                      width={130}
                     >
                       <Image src={itm.img} width={'90px'} />
                       {itm.item_name}
                     </Box>
                   </Link>
                 ))}
-              </HStack>
+              </Grid>
             </AccordionPanel>
           </>
         )}

@@ -39,7 +39,7 @@ const Sidebar = ({ isOpen }: Props) => {
   return (
     <>
       {isOpen ? (
-        <Accordion defaultIndex={[0]} allowToggle>
+        <Accordion zIndex={10} position={{base:'absolute',md:'static'}} width={230} defaultIndex={[0]} allowToggle>
           {panels.map((item, idx) => (
             <AccordionItem color={'white'} border={'none'} key={idx}>
               <h2>
