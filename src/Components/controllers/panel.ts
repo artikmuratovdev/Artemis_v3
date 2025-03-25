@@ -85,7 +85,7 @@ export const accordions = [
         target: '#',
         img: 'assets/image/Achievement.png',
       },
-      { item_name: 'Fan tanlovi', target: '#', img: '../assets/image/Target.png' },
+      { item_name: 'Fan tanlovi', target: '#', img: '../../../assets/image/Target.png' },
       { item_name: 'Fan resurslari', target: '#', img: 'assets/image/PC.png' },
       { item_name: 'Unilibrary', target: '#', img: 'assets/image/PC.png' },
     ],
