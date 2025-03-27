@@ -63,7 +63,7 @@ const Header = ({ toggler }: Props) => {
           <MenuButton>
             <Flex color={'white'}  alignItems={'center'}>
               <Show above='md'>
-                <Avatar size={'sm'} src={'src/img/Sharingan.jpg'} />
+                <Avatar size={'sm'} src={'src/assets/image/Sharingan.jpg''} />
               </Show>
               <Box textAlign={'start'} ml='3'>
                 <Text fontWeight='bold'>Ortiqmuratov D. J</Text>
