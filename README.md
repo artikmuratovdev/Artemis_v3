@@ -93,3 +93,13 @@ Lokalda ham tekshiruvni qo'lda ishga tushirish mumkin:
 ```bash
 ./scripts/check-required-env.sh
 ```
+
+## 8) Netlify deploy eslatmasi
+Agar deploy Netlify orqali bo'lsa, `netlify.toml` ichida Node versiya 20 ga pin qilingan.
+Netlify UI ichida ham quyidagi Environment variablelarni kiriting:
+- `NEXT_PUBLIC_SUPABASE_URL`
+- `NEXT_PUBLIC_SUPABASE_ANON_KEY`
+- `SUPABASE_SERVICE_ROLE_KEY` (faqat server-side ishlar uchun, clientga chiqmasin)
+
+Build command: `npm run build`
+Publish directory: `dist`
