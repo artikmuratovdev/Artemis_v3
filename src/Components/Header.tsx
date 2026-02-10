@@ -16,17 +16,17 @@ import {
   useColorMode,
 } from '@chakra-ui/react';
 import { useState } from 'react';
-import { GoBellFill  } from 'react-icons/go';
+import { GoBellFill } from 'react-icons/go';
 
 interface Props {
   toggler: () => void;
 }
 
 const Header = ({ toggler }: Props) => {
-  const { colorMode, toggleColorMode } = useColorMode()
+  const { colorMode, toggleColorMode } = useColorMode();
   const langs = ["O'zbekcha", 'English', 'Русский'];
   const [lang, setLang] = useState('');
-  console.log(colorMode , lang);
+  console.log(colorMode, lang);
 
   return (
     <HStack
@@ -43,7 +43,7 @@ const Header = ({ toggler }: Props) => {
         cursor={'pointer'}
         color={'white'}
       />
-      <HStack  spacing={5}>
+      <HStack spacing={5}>
         <Select
           cursor={'pointer'}
           width={120}
@@ -61,9 +61,9 @@ const Header = ({ toggler }: Props) => {
         </Show>
         <Menu closeOnSelect={false}>
           <MenuButton>
-            <Flex color={'white'}  alignItems={'center'}>
+            <Flex color={'white'} alignItems={'center'}>
               <Show above='md'>
-                <Avatar size={'sm'} src={'src/assets/image/Sharingan.jpg''} />
+                <Avatar size={'sm'} src={'src/assets/image/Sharingan.jpg'} />
               </Show>
               <Box textAlign={'start'} ml='3'>
                 <Text fontWeight='bold'>Ortiqmuratov D. J</Text>
@@ -71,9 +71,14 @@ const Header = ({ toggler }: Props) => {
               </Box>
             </Flex>
           </MenuButton>
-          <MenuList color={colorMode === 'dark'? "white" :'#0f1319'} minWidth='240px'>
+          <MenuList
+            color={colorMode === 'dark' ? 'white' : '#0f1319'}
+            minWidth='240px'
+          >
             <Box as='div'>
-              <MenuItemOption onClick={toggleColorMode}  value='light'>{colorMode}</MenuItemOption>
+              <MenuItemOption onClick={toggleColorMode} value='light'>
+                {colorMode}
+              </MenuItemOption>
             </Box>
             <MenuDivider />
             <Box>
